@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Currency Converter</title>
+    <style>
+        #heading{
+            color: red; 
+        }
+        .flag{
+            height: 30px;
+            width: 50px;
+        }
+        .inputbox{
+            width: 70%;
+        }
+    </style>
+    <script>
+        function convert(){
+            var usd=document.getElementById("USD").value;
+            var inr=document.getElementById("INR").value;
+            var irr=document.getElementById("IRR").value;
+            var pkr=document.getElementById("PKR").value;
+            var sar=document.getElementById("SAR").value;
+            var bdt=document.getElementById("BDT").value;
+            var uusd=document.getElementById("UUSD").value;
+            var cny=document.getElementById("CNY").value;
+            var lkr=document.getElementById("LKR").value;
+            const currencyRates={
+                USD : 1.0,//1 dollar 
+                INR : 83.97,//indian rupees in 1 dollar
+                BDT : 119.51,//bangladeshi taka
+                LKR : 292.93,//shrilankan rupees
+                SAR : 3.75,//saudi riyal
+                IRR : 42.00,//iran rial
+                CNY : 7.07,//china yuan
+                PKR : 277.78,//pakistan ruppes
+                UUSD : 0.76 //uk pounds
+            };
+            if(usd==1){
+                document.getElementById("INR").value=83.97;
+                document.getElementById("IRR").value=42.00;
+                document.getElementById("PKR").value=277.78;
+                document.getElementById("SAR").value=3.75;
+                document.getElementById("BDT").value=119.51;
+                document.getElementById("UUSD").value=0.76;
+                document.getElementById("CNY").value=7.07;
+                document.getElementById("LKR").value=292.93;
+            }
+            else if(usd>1){
+                document.getElementById("INR").value=83.97*usd;
+                document.getElementById("IRR").value=42.00*usd;
+                document.getElementById("PKR").value=277.78*usd;
+                document.getElementById("SAR").value=3.75*usd;
+                document.getElementById("BDT").value=119.51*usd;
+                document.getElementById("UUSD").value=0.76*usd;
+                document.getElementById("CNY").value=7.07*usd;
+                document.getElementById("LKR").value=292.93*usd;
+            }
+            
+            if(inr==1){
+                document.getElementById("USD").value=0.0119090151;
+                document.getElementById("IRR").value=0.500178635;
+                document.getElementById("PKR").value=3.30808622;
+                document.getElementById("SAR").value=3.75/83.97;
+                document.getElementById("BDT").value=119.51/83.97;
+                document.getElementById("UUSD").value=0.76/83.97;
+                document.getElementById("CNY").value=7.07/83.97;
+                document.getElementById("LKR").value=292.93/83.97;
+            }
+            else if(inr>1){
+                document.getElementById("USD").value=0.0119090151*inr;
+                document.getElementById("IRR").value=0.500178635*inr;
+                document.getElementById("PKR").value=3.30808622*inr;
+                document.getElementById("SAR").value=3.75/83.97*inr;
+                document.getElementById("BDT").value=119.51/83.97*inr;
+                document.getElementById("UUSD").value=0.76/83.97*inr;
+                document.getElementById("CNY").value=7.07/83.97*inr;
+                document.getElementById("LKR").value=292.93/83.97*inr;
+            }
+            
+            if(irr>=1){
+                document.getElementById("INR").value=83.97/42.00*irr;
+                document.getElementById("USD").value=1/42.00*irr;
+                document.getElementById("PKR").value=277.78/42.00*irr;
+                document.getElementById("SAR").value=3.75/42.00*irr;
+                document.getElementById("BDT").value=119.51/42.00*irr;
+                document.getElementById("UUSD").value=0.76/42.00*irr;
+                document.getElementById("CNY").value=7.07/42.00*irr;
+                document.getElementById("LKR").value=292.93/42.00*irr;
+            }
+            if(pkr>=1){
+                document.getElementById("INR").value=83.97/277.78*pkr;
+                document.getElementById("IRR").value=42.00/277.78*pkr;
+                document.getElementById("USD").value=1/277.78*pkr;
+                document.getElementById("SAR").value=3.75/277.78*pkr;
+                document.getElementById("BDT").value=119.51/277.78*pkr;
+                document.getElementById("UUSD").value=0.76/277.78*pkr;
+                document.getElementById("CNY").value=7.07/277.78*pkr;
+                document.getElementById("LKR").value=292.93/277.78*pkr;
+            }
+            if(sar>=1){
+                document.getElementById("INR").value=83.97/3.75*sar;
+                document.getElementById("IRR").value=42.00/3.75*sar;
+                document.getElementById("PKR").value=277.78/3.75*sar;
+                document.getElementById("USD").value=1/3.75*sar;
+                document.getElementById("BDT").value=119.51/3.75*sar;
+                document.getElementById("UUSD").value=0.76/3.75*sar;
+                document.getElementById("CNY").value=7.07/3.75*sar;
+                document.getElementById("LKR").value=292.93/3.75*sar;
+            }
+            if(bdt>=1){
+                document.getElementById("INR").value=83.97/119.51*bdt;
+                document.getElementById("IRR").value=42.00/119.51*bdt;
+                document.getElementById("PKR").value=277.78/119.51*bdt;
+                document.getElementById("SAR").value=3.75/119.51*bdt;
+                document.getElementById("USD").value=1/119.51*bdt;
+                document.getElementById("UUSD").value=0.76/119.51*bdt;
+                document.getElementById("CNY").value=7.07/119.51*bdt;
+                document.getElementById("LKR").value=292.93/119.51*bdt;
+            }
+            if(uusd>=1){
+                document.getElementById("INR").value=83.97/0.76*uusd;
+                document.getElementById("IRR").value=42.00/0.76*uusd;
+                document.getElementById("PKR").value=277.78/0.76*uusd;
+                document.getElementById("SAR").value=3.75/0.76*uusd;
+                document.getElementById("BDT").value=119.51/0.76*uusd;
+                document.getElementById("USD").value=1/0.76*uusd;
+                document.getElementById("CNY").value=7.07/0.76*uusd;
+                document.getElementById("LKR").value=292.93/0.76*uusd;
+            }
+            if(cny>=1){
+                document.getElementById("INR").value=83.97/7.07*cny;
+                document.getElementById("IRR").value=42.00/7.07*cny;
+                document.getElementById("PKR").value=277.78/7.07*cny;
+                document.getElementById("SAR").value=3.75/7.07*cny;
+                document.getElementById("BDT").value=119.51/7.07*cny;
+                document.getElementById("UUSD").value=0.76/7.07*cny;
+                document.getElementById("USD").value=1/7.07*cny;
+                document.getElementById("LKR").value=292.93/7.07*cny;
+            }
+            if(lkr>=1){
+                document.getElementById("INR").value=83.97/292.93*lkr;
+                document.getElementById("IRR").value=42.00/292.93*lkr;
+                document.getElementById("PKR").value=277.78/292.93*lkr;
+                document.getElementById("SAR").value=3.75/292.93*lkr;
+                document.getElementById("BDT").value=119.51/292.93*lkr;
+                document.getElementById("UUSD").value=0.76/292.93*lkr;
+                document.getElementById("CNY").value=7.07/292.93*lkr;
+                document.getElementById("USD").value=1/292.93*lkr;
+            }
+        }
+    </script>
+</head>
+<body style="background-color: black;">
+    
+    <div class="row m-0 p-0">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 bg-light mt-4" style="height: 650px; border-radius: 10px;
+         overflow-y: scroll; ">
+            <h1 id="heading" class="fs-1">Currency Converter</h1>
+            <img src="./usd.jpg" alt="" class="flag">
+            <span>USD: </span>
+            <input type="number" class="inputbox" id="USD">
+            <br><br>
+            <img src="./INR.jpg" alt="" class="flag">
+            <span>INR: </span>
+            <input type="number" class="inputbox" id="INR">
+            <br><br>
+            <img src="./iran.jpg" alt="" class="flag">
+            <span>IRR: </span>
+            <input type="number" class="inputbox" id="IRR">
+            <br><br>
+            <img src="./pak.jpg" alt="" class="flag">
+            <span>PKR: </span>
+            <input type="number" class="inputbox" id="PKR">
+            <br><br>
+            <img src="./saudi.jpg" alt="" class="flag">
+            <span>SAR: </span>
+            <input type="number" class="inputbox" id="SAR">
+            <br><br>
+            <img src="./bangla.jpg" alt="" class="flag">
+            <span>BDT: </span>
+            <input type="number" class="inputbox" id="BDT">
+            <br><br>
+            <img src="./uk.jpg" alt="" class="flag">
+            <span>UUSD: </span>
+            <input type="number" class="inputbox" id="UUSD">
+            <br><br>
+            <img src="./china.jpg" alt="" class="flag">
+            <span>CNY: </span>
+            <input type="number" class="inputbox" id="CNY">
+            <br><br>
+            <img src="./shrilanka.jpg" alt="" class="flag">
+            <span>LKR: </span>
+            <input type="number" class="inputbox" id="LKR"><br><br>
+            <button class="btn btn-primary btn-lg w-40" id="btn" onclick="convert()">CONVERT</button>
+        </div>
+        <div class="col-sm-4">
+        </div>
+    </div>
+</body>
+</html>
